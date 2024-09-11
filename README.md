@@ -1,24 +1,15 @@
-# README
+# Sistema de Controle de Estoque
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este projeto é um sistema de controle de estoque desenvolvido utilizando Ruby on Rails. O sistema permite gerenciar produtos e registrar as movimentações de entrada e saída de estoque.
 
-Things you may want to cover:
+## Funcionalidades
 
-* Ruby version
+- **Cadastro de produtos**: Gerencie o estoque de produtos, incluindo nome, descrição, preço e quantidade em estoque.
+- **Movimentação de estoque**: Controle entradas e saídas de produtos no estoque.
+- **Relatórios**: Geração de relatórios sobre o estoque atual e movimentações.
 
-* System dependencies
+## Requisitos
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Ruby 3.2.0
+- Rails 7.1.3.4 
+- Banco de dados PostgreSQL
