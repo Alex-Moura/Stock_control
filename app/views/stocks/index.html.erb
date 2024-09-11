@@ -1,0 +1,35 @@
+<h1>Lista de Estoque</h1>
+<table class="table">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Produto</th>
+      <th scope="col">Preco de compra</th>
+      <th scope="col">Preco de venda</th>
+      <th scope="col">Quantidade em estoque</th>
+      <th scope="col">Quantidade minima</th>
+      <th scope="col">Editar</th>
+      <th scope="col">Exluir</th>
+    </tr>
+  </thead>
+  <tbody>
+<% @products.zip(@stocks).each do |product, stock| %>
+    <% if stock.nil? %>
+      <% break  %>
+    <% else %>
+      <tr>
+        <th scope="row"><%= product.name %></th>
+        <td><%=stock.price%></td>
+        <td><%=stock.selling_price%></td>
+        <%= render 'warnings', stock: stock%>
+        <td><%= stock.stock_minimal %></td>
+        <td><%= link_to 'Editar este Estoque', edit_product_stock_path(product, stock), class: 'btn btn-primary' %></td>
+        <td><%= link_to 'Excluir', product_stock_path(product, stock), data: {'turbo-method': :delete }, class: 'btn btn-danger' %></td>      
+      </tr>
+    <% end %>
+  </tbody>
+<% end %> 
+</table>
+
+<div class="col-3">
+<%= link_to 'Lista de produtos', products_path, class: 'btn btn-primary' %>
+</div>

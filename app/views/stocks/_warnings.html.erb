@@ -1,0 +1,7 @@
+<% if stock.quantity < stock.stock_minimal  %>
+  <td class="text-danger"><%= stock.quantity %> <span class="badge text-bg-danger">Estoque muito baixo</span></td>
+<% elsif stock.quantity < stock.stock_minimal + 10 %>
+  <td class="text-warning"><%= stock.quantity %> <span class="badge text-bg-warning">Estoque Baixo</span></td>
+<% else %>
+  <td><%= stock.quantity %></td>
+<% end %>

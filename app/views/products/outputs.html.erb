@@ -1,0 +1,12 @@
+<%= form_with url: "/products/#{@product.id}/outputs", method: :post, model: @product, data: {turbo: false} do |f| %>
+
+<div class="col-3 mb-3  ">
+    <%= f.label :outputs, 'Saidas', class: "form-label" %>
+    <%= f.number_field (:outputs), class: "form-control" %>
+</div>
+  
+  <div class="mb-3">
+      <%= f.submit 'Inserir quantidade se saidas', class: 'btn btn-success mr-2' %>
+  </div>
+
+<% end %>

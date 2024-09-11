@@ -1,0 +1,31 @@
+
+<h1>Lista de Produtos</h1>
+<table class="table">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Codigo</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Detalhes do produto</th>
+      <th scope="col">Estoque do produto</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+<% @products.zip(@stocks).each do |product, stock| %>
+    <tr>
+      <th scope="row"><%= product.id %></th>
+      <td><%= product.name %></td>
+      <td><%= link_to 'Detalhes', product_path(product), class: 'btn btn-primary' %></td>
+      <% if stock.nil? %>
+        <td><%= link_to 'Adicionar Estoque', new_product_stock_path(product.id), class: 'btn btn-primary' %>
+        <span class="badge text-bg-danger">Sem estoque ⚠</span>
+        </td>
+      <% else %>
+        <td><%= link_to 'Ver Estoque', product_stock_path(product.id, stock), class: 'btn btn-primary' %></td>
+      <% end %>
+    </tr>
+  </tbody>
+  <% end %> 
+</table>
+

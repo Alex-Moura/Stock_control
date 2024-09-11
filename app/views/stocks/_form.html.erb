@@ -1,0 +1,32 @@
+<%= form_with model: [product, stock], data: {turbo: false} do |f| %>
+
+  <div class="col-3">
+    <%= f.label :price, 'Preco de compra', class: "form-label"%>
+    <%= f.number_field :price, step: '0.01', class: "form-control" %>
+  </div>
+
+  <div class="col-3">
+    <%= f.label :selling_price, 'Preco de venda', class: "form-label"%>
+    <%= f.number_field :selling_price, step: '0.01', class: "form-control" %>
+  </div>
+
+  <div class="col-3">
+    <%= f.label :quantity, 'Quantidade', class: "form-label" %>
+    <%= f.number_field :quantity, class: "form-control" %>
+  </div>
+
+  <div class="col-3">
+    <%= f.label :stock_minimal, 'Estoque Minimo', class: "form-label" %>
+    <%= f.number_field :stock_minimal, class: "form-control"%>
+  </div>
+
+  <div class="col-3">
+    <%= f.label :product_id, 'Codigo do Produto', class: 'form-label' %>
+    <%= f.number_field :product_id, value: product.id, class: 'form-control' %>
+  </div>
+
+  <div class="mt-3">
+    <%= f.submit 'Adicionar Estoque', class: 'btn btn-success' %>
+  </div>
+
+<% end %>

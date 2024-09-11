@@ -1,0 +1,34 @@
+<h1>Estatisticas</h1>
+
+<table class="table">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Codigo</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Preco de compra</th>
+      <th scope="col">Preco de venda</th>
+      <th scope="col">Estoque Minimo</th>
+      <th scope="col">Estoque Atual</th>
+      <th scope="col">Quantidade Saidas</th>
+      <th scope="col">Quantidade Entradas</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><%= @product.id %></th>
+      <td><%= @product.name %></td>
+      <td><%= @product.price %></td>
+      <td><%= @product.selling_price %></td>
+      <td><%= @product.stock_min %></td>
+
+      <% if @product.stock_initial < @product.stock_min %>
+        <td class="text-danger"><%= @product.stock_initial%></td>
+      <% else %>
+        <td><%= @product.stock_initial%></td>
+      <% end %>
+      <td><%= @product.outputs %></td>
+      <td> <%= @product.stock_initial + @product.outputs %></td>
+    </tr>
+  </tbody>
+</table>

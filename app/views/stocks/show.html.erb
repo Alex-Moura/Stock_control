@@ -1,0 +1,29 @@
+<h1>ESTOQUE</h1>
+
+<table class="table">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Codigo</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Preco de compra</th>
+      <th scope="col">Preco de venda</th>
+      <th scope="col">Estoque Atual</th>
+      <th scope="col">Estoque Minimo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><%=@product.id%></th>
+      <td><%= @product.name %></td>
+      <td><%= @stock.price %></td>
+      <td><%= @stock.selling_price %></td>
+      <%= render 'warnings', stock: @stock %>
+      <td><%= @stock.stock_minimal %></td>
+    </tr>
+  </tbody>
+</table>
+<div class="col-5">
+  <%= link_to 'Dashboard', products_path, class: 'btn btn-primary' %>
+  <%= link_to 'Editar', edit_product_stock_path(@product, @stock), class: 'btn btn-primary' %>
+  <%= link_to 'Excluir', product_stock_path(@product, @stock), data: {'turbo-method': :delete }, class: 'btn btn-danger' %>
+</div>

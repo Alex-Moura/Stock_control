@@ -1,0 +1,22 @@
+<h1>Produto: <%= @product.name %></h1>
+<div class="w-75 p-3">
+<table class="table">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Codigo</th>
+      <th scope="col">Nome</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><%=@product.id%></th>
+      <td><%= @product.name %></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div class="col-5">
+  <%= link_to 'Dashboard', products_path, class: 'btn btn-primary mt-3' %>
+  <%= link_to 'Editar', edit_product_path(@product), class: 'btn btn-primary mt-3' %>
+  <%= link_to 'Excluir', product_path(@product), data: {'turbo-method': :delete }, class: 'btn btn-danger mt-3' %>
+</div>

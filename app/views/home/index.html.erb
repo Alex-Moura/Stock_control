@@ -1,0 +1,14 @@
+  <% if @products.empty? %>
+    <h1>Sem Produtos</h1>
+    <div class="col-3">
+      <%= link_to 'Cadastrar novo produto', new_product_path, class: 'btn btn-success' %>
+    </div>
+  <% else %>
+    <div class="col-8">
+      <h1>quantidade de produtos cadastrados: <%=@products.size%></h1>
+      <%= link_to 'Ver produtos', products_path, class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+
+  
+
